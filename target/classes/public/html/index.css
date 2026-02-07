@@ -1,0 +1,396 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: url("books2.jpg") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* ===== Glassmorphism Container ===== */
+.container {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    padding: 25px 35px;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease-in-out;
+    width: auto;
+    max-width: 1000px;
+}
+.container h1{
+    color: white;
+}
+/* ===== App Layout ===== */
+.app-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* ===== Menu ===== */
+.menu-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-shrink: 0;
+    align-items: center;
+}
+
+.menu button {
+    display: block;
+    width: 360px;
+    margin-left: 17px;
+    padding: 14px;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(145deg, #007aff, #0051a8);
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+    box-shadow: inset 4px 4px 10px #bcbcbc, inset -4px -4px 10px #ffffff;
+}
+
+.menu button:hover {
+    transform: scale(1.03);
+    background: linear-gradient(145deg, #0051a8, #003f7f);
+    box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+}
+
+/* Right Form Panel */
+.form-section-wrapper {
+    overflow: hidden;
+    width: 0;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55), 
+                padding 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* Expanded state */
+.form-section-wrapper.expanded {
+    padding-left: 20px;
+}
+
+/* Forms inside panel */
+.form-section {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.4s ease 0.4s;
+}
+.form-section h3{
+    color: white;
+}
+.form-section.show {
+    display: block;
+    opacity: 1;
+}
+.form-section .back-btn {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 15px;
+  cursor: pointer;
+  color: white;
+}
+
+.form-section .back-btn:hover {
+  color: #007bff;
+}
+.form-section .btn-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 900px) {
+    .form-section-wrapper.expanded {
+        width: 100%;
+        padding-left: 0;
+        padding-top: 20px;
+    }
+
+    .app-layout {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu button {
+        width: 100%;
+    }
+}
+
+
+/* Inputs */
+.form-section input {
+    width: 95%;
+    margin: 8px 0;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    outline: none;
+    font-size: 15px;
+    color: #1d1d1f;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: background 0.2s ease-in-out;
+}
+
+.form-section input:focus {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* Select */
+.form-section select {
+    width: 100%;
+    margin: 8px 0;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    outline: none;
+    font-size: 15px;
+    color: #1d1d1f;
+    appearance: none;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.2s ease-in-out;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%231d1d1f' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    padding-right: 36px;
+}
+
+.form-section select:hover {
+    background: rgba(255, 255, 255, 0.75);
+    transform: scale(1.01);
+}
+
+.form-section select option {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #1d1d1f;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.form-section select option:checked,
+.form-section select option:hover {
+    background: rgba(0, 122, 255, 0.2);
+    color: #007aff;
+    font-weight: 500;
+}
+
+/* Submit Buttons */
+.form-section button {
+    background: linear-gradient(145deg, #34c759, #248a3d);
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    margin-top: 12px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(52,199,89,0.4);
+    transition: transform 0.2s, background 0.3s;
+}
+
+.form-section button:hover {
+    transform: scale(1.02);
+    background: linear-gradient(145deg, #248a3d, #1d6e31);
+}
+
+/* List */
+.list {
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(15px);
+    padding: 12px;
+    border-radius: 12px;
+    max-height: 180px;
+    overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.list li {
+    margin: 6px 0;
+    font-size: 15px;
+    color: #1d1d1f;
+}
+
+/* 🔘 Dark Mode Toggle Button */
+/* From Uiverse.io by andrew-demchenk0 */ 
+/* ================= Dark Mode Toggle ================= */
+.switch {
+  font-size: 17px;
+  position: absolute;   /* place inside container */
+  top: 15px;            /* distance from top */
+  right: 20px;          /* distance from right */
+  width: 64px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #73C0FC;
+  transition: .4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+  left: 2px;
+  bottom: 2px;
+  z-index: 2;
+  background-color: #e8e8e8;
+  transition: .4s;
+}
+
+.sun svg {
+  position: absolute;
+  top: 6px;
+  left: 36px;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+}
+
+.moon svg {
+  fill: #73C0FC;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+}
+
+/* Animations */
+.sun svg {
+  animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0); }
+  100% { transform: rotate(360deg); }
+}
+
+.moon svg {
+  animation: tilt 5s linear infinite;
+}
+
+@keyframes tilt {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.input:checked + .slider {
+  background-color: #183153;
+}
+
+.input:focus + .slider {
+  box-shadow: 0 0 1px #183153;
+}
+
+.input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+/* 🌙 Dark Mode Styles */
+body.dark-mode {
+  position: relative;
+  color: #e0e0e0;
+}
+
+/* dark overlay filter to soften background image */
+body.dark-mode::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.6); /* dark filter over background */
+  z-index: -1;
+}
+
+/* container glow in yellow */
+body.dark-mode .container {
+  background: rgba(30, 30, 30, 0.85);
+  border: 1px solid rgba(255, 255, 100, 0.5);
+  box-shadow: 0 0 20px rgba(255, 230, 100, 0.6), 0 0 40px rgba(255, 230, 100, 0.3);
+}
+
+/* inputs & selects glowing */
+body.dark-mode .form-section input,
+body.dark-mode .form-section select {
+  background: rgba(50, 50, 50, 0.8);
+  color: #f5f5f5;
+  border: 1px solid rgba(255, 230, 100, 0.5);
+  box-shadow: 0 0 8px rgba(255, 230, 100, 0.4);
+}
+
+body.dark-mode .form-section input:focus,
+body.dark-mode .form-section select:focus {
+  outline: none;
+  box-shadow: 0 0 12px rgba(255, 255, 150, 0.7);
+}
+
+/* buttons in dark mode */
+body.dark-mode .menu button {
+  background: linear-gradient(145deg, #444, #222);
+  color: #f5f5f5;
+  border: 1px solid rgba(255, 230, 100, 0.4);
+  box-shadow: inset 4px 4px 10px #bcbcbc, inset -4px -4px 10px #ffffff;
+}
+
+body.dark-mode .menu button:hover {
+  background: linear-gradient(145deg, #666, #333);
+  box-shadow: 0 0 15px rgba(255, 230, 100, 0.6);
+}
+
+/* lists glow slightly */
+body.dark-mode .list {
+  color: #f5f5f5;
+  border: 1px solid rgba(255, 230, 100, 0.3);
+  box-shadow: 0 0 10px rgba(255, 230, 100, 0.4);
+}

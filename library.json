@@ -1,0 +1,67 @@
+{
+  "books": [
+    {
+      "title": "Atomic Habits",
+      "author": "James Clear",
+      "available": true
+    },
+    {
+      "title": "Rich Dad Poor Dad",
+      "author": "Robert Kiyosaki",
+      "available": true
+    },
+    {
+      "title": "Brave",
+      "author": "Thomas",
+      "available": true
+    }
+  ],
+  "members": [
+    {
+      "name": "Alberto",
+      "type": "Student",
+      "borrowedBooks": []
+    },
+    {
+      "name": "Bob",
+      "type": "Student",
+      "borrowedBooks": []
+    },
+    {
+      "name": "Clark",
+      "type": "Teacher",
+      "borrowedBooks": []
+    },
+    {
+      "name": "David",
+      "type": "Teacher",
+      "borrowedBooks": []
+    },
+    {
+      "name": "Mark",
+      "type": "Teacher",
+      "borrowedBooks": []
+    },
+    {
+      "name": "Onyx",
+      "type": "Student",
+      "borrowedBooks": []
+    }
+  ],
+  "transactions": [
+    "Registered member: Alberto (Student)",
+    "Registered member: Mark (Teacher)",
+    "Added book: Atomic Habits by James Clear",
+    "Added book: Rich Dad Poor Dad by Robert",
+    "Registered member: Clark (Teacher)",
+    "Registered member: Onyx (Student)",
+    "Registered member: Bob (Student)",
+    "Registered member: David (Teacher)",
+    "Bob borrowed \"Atomic Habits\" by James Clear",
+    "Bob returned \"Atomic Habits\" by James Clear",
+    "Alberto borrowed \"Atomic Habits\" by James Clear",
+    "Alberto returned \"Atomic Habits\" by James Clear",
+    "Added book: Rich Dad Poor Dad by Robert Kiyosaki",
+    "Added book: Brave by Thomas"
+  ]
+}
