@@ -145,8 +145,8 @@ java-prog-group-3/
 
 ### 1. Clone the repository
 ```bash
-git clone https://markemildacoylo209:drDqmFnvjeHyVh4QfRK5@gitlab.com/markemildacoylo209/project-bsit-2.git java-prog-group-3
-cd java-prog-group-3
+git clone https://github.com/albertii-alt/library_system_management.git
+cd library_system_management
 ```
 
 ### 2. Run the backend (Java + Spark)
